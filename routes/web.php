@@ -18,19 +18,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('products', App\Http\Controllers\ProductController::class);
-    Route::resource('orders', App\Http\Controllers\OrderController::class);
     Route::get('maps/list', [App\Http\Controllers\MapController::class, 'list'])->name('maps.list');
     Route::resource('maps', \App\Http\Controllers\MapController::class);
 
 
     Route::get('employees/list', [App\Http\Controllers\EmployeeController::class, 'list'])->name('employees.list');
     Route::resource('employees', \App\Http\Controllers\EmployeeController::class);
-
-    Route::get('integrations', [App\Http\Controllers\IntegrationController::class, 'index'])->name('integrations.index');
-    Route::get('integrations/create', [App\Http\Controllers\IntegrationController::class, 'create'])->name('integrations.create');
-    Route::post('integrations/{integration}/sync', [App\Http\Controllers\IntegrationController::class, 'sync'])->name('integrations.sync');
-    Route::post('integrations', [App\Http\Controllers\IntegrationController::class, 'store'])->name('integrations.store');
 });
 
 require __DIR__.'/auth.php';
