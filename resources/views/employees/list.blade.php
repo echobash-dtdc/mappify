@@ -20,7 +20,7 @@
         var map = L.map('map').setView([22, 76], 5)
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.opkenstreetmap.org/">OpenStreetMap</a> contributors'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         @foreach ($employees as $employee)
