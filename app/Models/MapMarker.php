@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class MapMarker extends Model
+{
+    protected $table = 'maps_markers';
+    protected $fillable = ['name', 'description', 'image', 'latitude', 'longitude', 'type', 'status'];
+    protected $casts = [
+        'latitude' => 'float',
+        'longitude' => 'float',
+    ];
+
+
+}
